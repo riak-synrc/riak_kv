@@ -4,21 +4,8 @@
  [
   {description, "Riak Key/Value Store"},
   {vsn, git},
-  {applications, [
-                  kernel,
-                  stdlib,
-                  sasl,
-                  crypto,
-                  riak_api,
-                  riak_core,
-                  sidejob,
-                  erlang_js,
-                  mochiweb,
-                  webmachine,
-                  os_mon,
-                  riak_pipe,
-                  riak_dt,
-                  riak_pb
+  {applications, [kernel,stdlib,sasl,riak_core,sidejob,
+                             os_mon,riak_api,riak_pipe,riak_dt,riak_pb
                  ]},
   {registered, []},
   {mod, {riak_kv_app, []}},

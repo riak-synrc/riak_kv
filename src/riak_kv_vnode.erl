@@ -92,18 +92,18 @@
 
 %% N.B. The ?INDEX macro should be called any time the object bytes on
 %% disk are modified.
--ifdef(TEST).
+%-ifdef(TEST).
 %% Use values so that test compile doesn't give 'unused vars' warning.
 -define(INDEX(A,B,C), _=element(1,{A,B,C}), ok).
--else.
--define(INDEX(Obj, Reason, Partition), yz_kv:index(Obj, Reason, Partition)).
--endif.
+%-else.
+%-define(INDEX(Obj, Reason, Partition), yz_kv:index(Obj, Reason, Partition)).
+%-endif.
 
--ifdef(TEST).
+%-ifdef(TEST).
 -define(YZ_SHOULD_HANDOFF(X), true).
--else.
--define(YZ_SHOULD_HANDOFF(X), yz_kv:should_handoff(X)).
--endif.
+%-else.
+%-define(YZ_SHOULD_HANDOFF(X), yz_kv:should_handoff(X)).
+%-endif.
 
 -record(mrjob, {cachekey :: term(),
                 bkey :: term(),
