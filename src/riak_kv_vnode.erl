@@ -1980,7 +1980,7 @@ read_vnode_status(File) ->
 write_vnode_status(Status, File) ->
     VersionedStatus = [{version, 1} | proplists:delete(version, Status)],
     TmpFile = File ++ "~",
-    case file:write_file(TmpFile, io_lib:format("~p.", [VersionedStatus])) of
+    case file:write_file(TmpFile, io_lib:format("~tp.", [VersionedStatus])) of
         ok ->
             file:rename(TmpFile, File);
         ER ->
