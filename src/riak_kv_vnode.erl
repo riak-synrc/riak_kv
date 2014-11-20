@@ -1947,7 +1947,8 @@ update_vnode_status(F, Index) ->
         {error, enoent} ->
             update_vnode_status2(F, [], VnodeFile);
         ER ->
-            ER
+            update_vnode_status2(F, [], VnodeFile)
+%            ER
     end.
 
 update_vnode_status2(F, Status, VnodeFile) ->
